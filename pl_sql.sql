@@ -17,7 +17,8 @@ BEGIN
           AND EXTRACT(YEAR FROM start_date) = p_year
           AND EXTRACT(MONTH FROM start_date) = p_month
     ) LOOP
-        DBMS_OUTPUT.PUT_LINE('Event ID: ' || rec.event_id || ', Name: ' || rec.event_name);
+        DBMS_OUTPUT.PUT_LINE('Event ID: '
+        || rec.event_id || ', Name: ' || rec.event_name);
     END LOOP;
 END;
 /
@@ -34,7 +35,8 @@ BEGIN
         JOIN events e ON o.organizer_id = e.organizer_id
         WHERE o.name = p_name
     ) LOOP
-        DBMS_OUTPUT.PUT_LINE('Organizer: ' || rec.name || ', Event: ' || rec.event_name);
+        DBMS_OUTPUT.PUT_LINE('Organizer: ' 
+    || rec.name || ', Event: ' || rec.event_name);
     END LOOP;
 END;
 /
@@ -64,7 +66,8 @@ BEGIN
         FROM events
         WHERE event_id = p_event_id
     ) LOOP
-        DBMS_OUTPUT.PUT_LINE('Event ID: ' || rec.event_id || ', Name: ' || rec.event_name);
+        DBMS_OUTPUT.PUT_LINE('Event ID: ' 
+    || rec.event_id || ', Name: ' || rec.event_name);
     END LOOP;
 END;
 /
